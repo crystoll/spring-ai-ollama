@@ -18,9 +18,9 @@ public class ChatController {
         this.chatModel = chatModel;
     }
 
-    @GetMapping("/ai/generate")
+    @GetMapping(path = "/ai/generate", produces = "text/html")
     public String generate(@RequestParam(value = "message", defaultValue = "Tell me a joke") String message) {
-        return this.chatModel.call(message);
+        return "<pre>" + this.chatModel.call(message) + "</pre>";
     }
 
 }
