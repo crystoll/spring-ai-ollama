@@ -20,7 +20,7 @@ public class ChatController {
 
     @GetMapping(path = "/ai/generate", produces = "text/html")
     public String generate(@RequestParam(value = "message", defaultValue = "Tell me a joke") String message) {
-        return "<pre>" + this.chatModel.call(message) + "</pre>";
+        return "<body style='color: green; font: Consolas; background-color: black'><pre>" + this.chatModel.call(message) + "</pre></body>";
     }
 
 }
